@@ -31,8 +31,8 @@ actions:
     command: |
       $windir = [Environment]::GetFolderPath('Windows')
       @(
-          'AtlasModules',
-          'AtlasDesktop'
+          'MsdOSModules',
+          'MsdOSDesktop'
       ) | ForEach-Object {
           if (!(Test-Path $_)) { exit 1 }
           Copy-Item -Path $_ -Destination $windir -Force -Recurse
@@ -74,8 +74,8 @@ actions:
   - !task: {path: 'tweaks\qol\set-hidden-settings-pages.yml'}
 
   # Main tasks
-  - !task: {path: 'atlas\start.yml'}
-  - !task: {path: 'atlas\services.yml'}
-  - !task: {path: 'atlas\components.yml'}
-  - !task: {path: 'atlas\appx.yml'}
+  - !task: {path: 'MsdOS\start.yml'}
+  - !task: {path: 'MsdOS\services.yml'}
+  - !task: {path: 'MsdOS\components.yml'}
+  - !task: {path: 'MsdOS\appx.yml'}
   - !task: {path: 'tweaks.yml'}

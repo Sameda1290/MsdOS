@@ -1,6 +1,6 @@
 ---
 title: Tweaks Root Playbook File
-description: Runs all of the Atlas playbook tweaks
+description: Runs all of the MsdOS playbook tweaks
 actions:
   # ------------------------- NOTES ------------------------- #
 

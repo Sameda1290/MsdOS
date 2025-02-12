@@ -1,4 +1,4 @@
-.\AtlasModules\initPowerShell.ps1
+.\MsdOSModules\initPowerShell.ps1
 function Invoke-AtlasDiskCleanup {
 	# Kill running cleanmgr instances, as they will prevent new cleanmgr from starting
 	Get-Process -Name cleanmgr -EA 0 | Stop-Process -Force -EA 0
@@ -96,6 +96,6 @@ if ($sysTemp) {
 }
 
 # Delete all system restore points
-# This is so that users can't attempt to revert from Atlas to stock with Restore Points
+# This is so that users can't attempt to revert from MsdOS to stock with Restore Points
 # It won't work, a full Windows reinstall is required ^
 vssadmin delete shadows /all /quiet
